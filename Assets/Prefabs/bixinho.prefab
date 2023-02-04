@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7161656987608927025}
   m_Layer: 0
   m_Name: bixinho
-  m_TagString: Untagged
+  m_TagString: bixinho
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

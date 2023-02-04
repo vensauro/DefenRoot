@@ -7,14 +7,13 @@ public class SpawnBixinhos : MonoBehaviour
   public GameObject[] bixinhos;
   public int selectedBixinho = 0;
   public float upThreshold = 1;
+  public bool canPlace = true;
 
-  // Start is called before the first frame update
   void Start()
   {
 
   }
 
-  // Update is called once per frame
   void Update()
   {
     if (Input.GetMouseButtonDown(1))
@@ -22,12 +21,28 @@ public class SpawnBixinhos : MonoBehaviour
       selectedBixinho = (selectedBixinho + 1) % bixinhos.Length;
     }
 
-    if (Input.GetKeyDown("space"))
+    if (Input.GetKeyDown("space") && canPlace)
     {
       var posicao = transform.position + (Vector3.up * upThreshold);
       var rotacao = Quaternion.identity;
       Instantiate(bixinhos[selectedBixinho], posicao, rotacao);
     }
+  }
 
+
+  void OnTriggerEnter2D(Collider2D other)
+  {
+    if (other.tag == "bixinho")
+    {
+      canPlace = false;
+    }
+  }
+
+  void OnTriggerExit2D(Collider2D other)
+  {
+    if (other.tag == "bixinho")
+    {
+      canPlace = true;
+    }
   }
 }
