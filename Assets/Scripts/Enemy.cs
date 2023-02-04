@@ -6,7 +6,7 @@ namespace RootFence
   public class Enemy : MonoBehaviour
   {
 
-    public GameObject alvo;
+    public GameObject target;
 
 
     public Direction direction = Direction.Right;

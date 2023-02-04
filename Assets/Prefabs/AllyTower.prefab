@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1167039684012093552}
   - component: {fileID: 8062694282484033702}
   - component: {fileID: 7161656987608927025}
+  - component: {fileID: 4192250650566335088}
   m_Layer: 0
-  m_Name: bixinho
-  m_TagString: bixinho
+  m_Name: AllyTower
+  m_TagString: allyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,3 +159,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4192250650566335088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098450854601850665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c03c6168576ac4797ec290fc40eb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  maxTime: 5
+  bullet: {fileID: 5804745496714340775, guid: 23259953df3206448a26b696402826c1, type: 3}

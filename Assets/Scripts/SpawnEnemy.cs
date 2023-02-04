@@ -5,7 +5,7 @@ namespace RootFence
   public class SpawnEnemy : MonoBehaviour
   {
 
-    public GameObject[] bixinhos;
+    public GameObject[] enemies;
     private float lastTime = 0;
     public int spawnTime = 3;
     public float upThreshold = -3.57f;
@@ -26,14 +26,14 @@ namespace RootFence
       }
       else
       {
-        var posicao = transform.position + (Vector3.up * upThreshold);
-        var rotacao = Quaternion.identity;
+        var position = transform.position + (Vector3.up * upThreshold);
+        var rotation = Quaternion.identity;
 
-        var randomIndex = Random.Range(0, bixinhos.Length);
-        var bixinEnemy = bixinhos[randomIndex].GetComponent<Enemy>();
-        // bixinEnemy.enemySpeed = 10;
-        bixinEnemy.direction = direction;
-        Instantiate(bixinEnemy, posicao, rotacao);
+        var randomIndex = Random.Range(0, enemies.Length);
+        var enemy = enemies[randomIndex].GetComponent<Enemy>();
+        // enemy.enemySpeed = 10;
+        enemy.direction = direction;
+        Instantiate(enemy, position, rotation);
         lastTime = 0;
       }
     }

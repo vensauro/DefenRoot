@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class SpawnBixinhos : MonoBehaviour
+public class SpawnerAllyTower : MonoBehaviour
 {
 
 
-  public GameObject[] bixinhos;
-  public int selectedBixinho = 0;
+  public GameObject[] allyTowers;
+  public int selectedTower = 0;
   public float upThreshold = 1;
   public bool canPlace = true;
 
@@ -18,21 +18,21 @@ public class SpawnBixinhos : MonoBehaviour
   {
     if (Input.GetMouseButtonDown(1))
     {
-      selectedBixinho = (selectedBixinho + 1) % bixinhos.Length;
+      selectedTower = (selectedTower + 1) % allyTowers.Length;
     }
 
     if (Input.GetKeyDown("space") && canPlace)
     {
-      var posicao = transform.position + (Vector3.up * upThreshold);
-      var rotacao = Quaternion.identity;
-      Instantiate(bixinhos[selectedBixinho], posicao, rotacao);
+      var position = transform.position + (Vector3.up * upThreshold);
+      var rotation = Quaternion.identity;
+      Instantiate(allyTowers[selectedTower], position, rotation);
     }
   }
 
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.tag == "bixinho")
+    if (other.tag == "allyTower")
     {
       canPlace = false;
     }
@@ -40,7 +40,7 @@ public class SpawnBixinhos : MonoBehaviour
 
   void OnTriggerExit2D(Collider2D other)
   {
-    if (other.tag == "bixinho")
+    if (other.tag == "allyTower")
     {
       canPlace = true;
     }
