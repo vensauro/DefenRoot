@@ -5,11 +5,12 @@ public class AllyTower : MonoBehaviour
 
   public float cooldown = 0;
   public float maxTime = 5;
+  public static float currentMaxTime = 5;
   public GameObject bullet;
   // Start is called before the first frame update
   void Start()
   {
-
+    maxTime = AllyTower.currentMaxTime;
   }
 
   // Update is called once per frame
@@ -24,12 +25,11 @@ public class AllyTower : MonoBehaviour
       cooldown = 0;
       shoot();
     }
-    // Tem que fazer com que isso funcione para novas torres também.
-    // Apenas torres que já foram spawnadas receberam o buff, novas
-    // não irão receber.
-    if (Input.GetKeyDown(KeyCode.K) && maxTime > 1)
+
+    if (Input.GetKeyDown(KeyCode.K) && currentMaxTime > 1)
     {
       upgradeCooldown(1);
+      maxTime -= 1;
     }
     if (Input.GetKeyDown(KeyCode.J) && Bullet.currentMoveSpeed < 30)
     {
@@ -44,9 +44,9 @@ public class AllyTower : MonoBehaviour
   }
 
   // Função para diminuir o cooldown dos tiros das torres aliadas.
-  void upgradeCooldown(float cooldownTosubtract)
+  static void upgradeCooldown(float cooldownTosubtract)
   {
-    maxTime -= cooldownTosubtract;
+    AllyTower.currentMaxTime -= cooldownTosubtract;
   }
 
 
