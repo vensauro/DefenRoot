@@ -22,6 +22,5 @@ namespace RootFence
       transform.position += aaa * enemySpeed * Time.deltaTime;
     }
 
-
   }
 }
