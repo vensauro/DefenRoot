@@ -38,6 +38,14 @@ public class SpawnBixinhos : MonoBehaviour
     }
   }
 
+  void OnTriggerStay2D(Collider2D other)
+  {
+    if (other.tag == "bixinho")
+    {
+      canPlace = false;
+    }
+  }
+
   void OnTriggerExit2D(Collider2D other)
   {
     if (other.tag == "bixinho")

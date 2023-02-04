@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3924132655333470565}
   - component: {fileID: 1167039684012093552}
   - component: {fileID: 8062694282484033702}
-  - component: {fileID: 7161656987608927025}
+  - component: {fileID: 2793830164448098505}
   m_Layer: 0
   m_Name: bixinho
   m_TagString: bixinho
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &7161656987608927025
+--- !u!50 &2793830164448098505
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
