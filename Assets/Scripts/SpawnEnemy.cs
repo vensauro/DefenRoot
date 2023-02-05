@@ -37,7 +37,7 @@ namespace RootFence
         lastTime = 0;
       }
 
-      if (LogicScript.gameIsOver)
+      if (GameManager.gameIsOver)
       {
         GetComponent<SpawnEnemy>().enabled = false;
       }

@@ -6,7 +6,7 @@ public class TreeBehavior : MonoBehaviour
   public int maxHealth = 100;
   public int currentHealth;
   public HealthBar healthBar;
-  public LogicScript logic;
+  public GameManager logic;
   public bool treeIsAlive = true;
 
   void Start()
