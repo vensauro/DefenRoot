@@ -1,10 +1,14 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
   public int score = 40;
   public TMP_Text scoreText;
+  public int playerScore;
+  public GameObject gameOverScreen;
+  public static bool gameIsOver = false;
   // Start is called before the first frame update
   void Start()
   {
@@ -26,5 +30,16 @@ public class GameManager : MonoBehaviour
   void Update()
   {
 
+  }
+
+  public void restartGame()
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
+
+  public void gameOver()
+  {
+    gameIsOver = true;
+    gameOverScreen.SetActive(true);
   }
 }
