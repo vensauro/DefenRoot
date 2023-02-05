@@ -10,7 +10,12 @@ namespace RootFence
 
 
     public Direction direction = Direction.Right;
+    private Vector3 vectorDirection;
     public float enemySpeed = 3;
+    public LayerMask _groundLayer;
+    public float height = 6;
+
+
     void Start()
     {
 
@@ -18,16 +23,31 @@ namespace RootFence
 
     void Update()
     {
-      var aaa = direction == Direction.Left ? Vector3.left : Vector3.right;
-      transform.position += aaa * enemySpeed * Time.deltaTime;
+      vectorDirection = direction == Direction.Left ? Vector3.left : Vector3.right;
+      transform.localScale = new Vector3(direction == Direction.Left ? -1 : 1, 1, 1);
+      transform.position += vectorDirection * enemySpeed * Time.deltaTime;
+
+      // RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.up * -1, height, _groundLayer);
+      // if (ray.)
+      // {
+      //   transform.position += Vector3.up * -10 * Time.deltaTime;
+      // }
+
     }
 
-void OnTriggerEnter2D(Collider2D other)
-  {
-    if (other.tag == "bullet")
+    // void OnDrawGizmos()
+    // {
+    //   Gizmos.color = Color.red;
+    //   Vector3 direction = transform.TransformDirection(Vector3.up) * -1 * height;
+    //   Gizmos.DrawRay(transform.position, direction);
+    // }
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-      Destroy(other.gameObject);
+      if (other.tag == "bullet")
+      {
+        Destroy(other.gameObject);
+      }
     }
-  }
   }
 }

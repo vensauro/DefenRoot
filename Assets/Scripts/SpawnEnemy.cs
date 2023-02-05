@@ -4,7 +4,6 @@ namespace RootFence
 {
   public class SpawnEnemy : MonoBehaviour
   {
-
     public GameObject[] enemies;
     private float lastTime = 0;
     public int spawnTime = 3;
@@ -32,6 +31,7 @@ namespace RootFence
         var randomIndex = Random.Range(0, enemies.Length);
         var enemy = enemies[randomIndex].GetComponent<Enemy>();
         // enemy.enemySpeed = 10;
+
         enemy.direction = direction;
         Instantiate(enemy, position, rotation);
         lastTime = 0;

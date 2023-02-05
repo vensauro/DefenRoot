@@ -7,10 +7,12 @@ public class AllyTower : MonoBehaviour
   public float maxTime = 5;
   public static float currentMaxTime = 5;
   public GameObject bullet;
+  public GameObject bulletStart;
   // Start is called before the first frame update
   void Start()
   {
     maxTime = AllyTower.currentMaxTime;
+    transform.localScale = new Vector3(transform.position.x > 0 ? -1 : 1, 1, 1);
   }
 
   // Update is called once per frame
@@ -40,7 +42,7 @@ public class AllyTower : MonoBehaviour
   // Função para criar a bala que as torres aliadas atiram.
   void shoot()
   {
-    Instantiate(bullet, transform.position, Quaternion.identity);
+    Instantiate(bullet, bulletStart.transform.position, Quaternion.identity);
   }
 
   // Função para diminuir o cooldown dos tiros das torres aliadas.
@@ -48,6 +50,4 @@ public class AllyTower : MonoBehaviour
   {
     AllyTower.currentMaxTime -= cooldownTosubtract;
   }
-
-
 }
