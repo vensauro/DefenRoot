@@ -2,7 +2,7 @@ using UnityEngine;
 
   public class TreeBehavior : MonoBehaviour
   {
-    public int maxHealth = 10;
+    public int maxHealth = 100;
   public int currentHealth;
   public HealthBar healthBar;
   void Start()
@@ -20,7 +20,7 @@ using UnityEngine;
     if (other.tag == "enemy")
     {
       Destroy(other.gameObject);
-      currentHealth -= 1;
+      currentHealth -= 5;
       healthBar.SetHealth(currentHealth);
     }
   }

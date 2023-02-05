@@ -40,7 +40,7 @@ public class SpawnerAllyTower : MonoBehaviour
 
   void OnTriggerStay2D(Collider2D other)
   {
-    if (other.tag == "bixinho")
+    if (other.tag == "allyTower")
     {
       canPlace = false;
     }

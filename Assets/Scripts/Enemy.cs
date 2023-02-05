@@ -22,5 +22,12 @@ namespace RootFence
       transform.position += aaa * enemySpeed * Time.deltaTime;
     }
 
+void OnTriggerEnter2D(Collider2D other)
+  {
+    if (other.tag == "bullet")
+    {
+      Destroy(other.gameObject);
+    }
+  }
   }
 }

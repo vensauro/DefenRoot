@@ -6,6 +6,9 @@ TagManager:
   tags:
   - bixinho
   - allyTower
+  - enemy
+  - tree
+  - bullet
   layers:
   - Default
   - TransparentFX
