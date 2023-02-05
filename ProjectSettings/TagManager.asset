@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bixinho
   - allyTower
   - enemy
   - tree
   - bullet
+  - FxTemporaire
+  - manager
   layers:
   - Default
   - TransparentFX
