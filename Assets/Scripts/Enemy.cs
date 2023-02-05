@@ -14,10 +14,12 @@ namespace RootFence
     public float enemySpeed = 3;
     public LayerMask _groundLayer;
     public float height = 6;
+    GameManager manager;
 
 
     void Start()
     {
+      manager = GameManager.getGameManager();
 
     }
 
@@ -46,6 +48,7 @@ namespace RootFence
     {
       if (other.tag == "bullet")
       {
+        manager.addPoints(10);
         Destroy(other.gameObject);
       }
     }
