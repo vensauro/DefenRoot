@@ -36,6 +36,11 @@ namespace RootFence
         Instantiate(enemy, position, rotation);
         lastTime = 0;
       }
+
+      if (LogicScript.gameIsOver)
+      {
+        GetComponent<SpawnEnemy>().enabled = false;
+      }
     }
   }
 }
