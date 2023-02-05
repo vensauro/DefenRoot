@@ -8,10 +8,11 @@ public class SpawnerAllyTower : MonoBehaviour
   public int selectedTower = 0;
   public float upThreshold = 1;
   public bool canPlace = true;
+  GameManager manager;
 
   void Start()
   {
-
+    manager = GameManager.getGameManager();
   }
 
   void Update()
@@ -21,8 +22,9 @@ public class SpawnerAllyTower : MonoBehaviour
       selectedTower = (selectedTower + 1) % allyTowers.Length;
     }
 
-    if (Input.GetKeyDown("space") && canPlace)
+    if (Input.GetKeyDown("space") && canPlace && manager.score >= 20)
     {
+      manager.addPoints(-20);
       var position = transform.position + (Vector3.up * upThreshold);
       var rotation = Quaternion.identity;
       Instantiate(allyTowers[selectedTower], position, rotation);
